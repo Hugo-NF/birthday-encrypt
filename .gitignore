@@ -22,5 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# certificates
+# certificates and openssl output
 *.pem
+*.txt

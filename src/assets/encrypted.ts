@@ -1,3 +1,9 @@
-const encrypted = 'VsL5wPnYtU6EkaGHZCy2Ot0+EeCEURfu0FdVT+iDd2z2rv95sryHS2wzqBZbZ4eN0+DxUpLH8qwWG4Wx6rhgbmEmNWglZfwRVPlUCpmoQgQEYgYRuSUBEWifC/fZ3YigRSlBDErxPcw/eUw5303XEPZ/4jGANzi9RBTRfs+kN5E=';
+const encrypted = `
+qn4zsGrVuFLR0mHwuAZDtZJOfxHhvbKEUV3+UBeRfCmsBX3sajCOrOCdmdI7HbEkhMjIfFhjvI1M
+99dll2APQVRsowsACw94UbK8DtdfV8WOtYhqZdZWZp9Oq7ElroL1nKiwXtDUgWh4iE8I0w2D4dke
+MCPmmlLIIAVFpKwXxh2hbTiqS4SwjCHV8oSVvIlM8XciRKQHzH+14gQpF8Q5gkogKz+X+mk6Js0C
+CMhNCyT34ZMZIaal4l6mqzn0lnl1Ay8HxWL1gj1Xu4OjVbWaqA+4MG0lQuFIm2etvDf9EiUD0JUf
+P+i0z8JX2xWKYxG2ZqcJF+hqL0XJ0+caxXNLPQ==
+`;
 
 export default encrypted;

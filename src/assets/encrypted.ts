@@ -1,0 +1,3 @@
+const encrypted = 'VsL5wPnYtU6EkaGHZCy2Ot0+EeCEURfu0FdVT+iDd2z2rv95sryHS2wzqBZbZ4eN0+DxUpLH8qwWG4Wx6rhgbmEmNWglZfwRVPlUCpmoQgQEYgYRuSUBEWifC/fZ3YigRSlBDErxPcw/eUw5303XEPZ/4jGANzi9RBTRfs+kN5E=';
+
+export default encrypted;

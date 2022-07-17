@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Typography,
 } from '@mui/material';
 
@@ -16,6 +17,7 @@ const Letter = () => {
     <Box sx={{ margin: 10 }}>
       <CertificateInput content={content} setContent={setContent} />
       <Typography variant="body1">{content}</Typography>
+      <Button variant="outlined" onClick={() => window.print()} sx={{ margin: 5 }}>Imprimir</Button>
     </Box>
   );
 };

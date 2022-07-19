@@ -23,6 +23,7 @@ import { JSEncrypt } from 'jsencrypt';
 import SampleCertificate from '../../assets/sample';
 
 import encrypted from '../../assets/encrypted';
+import Player from '../Player';
 
 export interface ICertificateInputProps {
   setContent: Dispatch<SetStateAction<string>>
@@ -67,14 +68,13 @@ const CertificateInput = ({ setContent }: ICertificateInputProps) => {
     }
   }, []);
 
-  return (
+  return display ? (
     <Grid
       container
       direction="row"
       spacing={3}
       justifyContent="flex-start"
       alignItems="flex-start"
-      sx={{ display: display ? 'flex' : 'none' }}
     >
       <Snackbar
         open={error}
@@ -100,10 +100,11 @@ const CertificateInput = ({ setContent }: ICertificateInputProps) => {
         />
       </Grid>
       <Grid item>
-        <Button variant="contained" onClick={decryptContent}>Revelar</Button>
+        <Button variant="contained" onClick={decryptContent}>Revelar conteúdo</Button>
       </Grid>
     </Grid>
-  );
+
+  ) : (<Player />);
 };
 
 export default CertificateInput;

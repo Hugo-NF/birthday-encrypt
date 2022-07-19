@@ -22,8 +22,9 @@ import { JSEncrypt } from 'jsencrypt';
 
 import SampleCertificate from '../../assets/sample';
 
+import encrypted from '../../assets/encrypted';
+
 export interface ICertificateInputProps {
-  content: string;
   setContent: Dispatch<SetStateAction<string>>
 }
 
@@ -32,7 +33,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>((
   ref,
 ) => <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />);
 
-const CertificateInput = ({ content, setContent }: ICertificateInputProps) => {
+const CertificateInput = ({ setContent }: ICertificateInputProps) => {
   const [certificate, setCertificate] = useState<string>(localStorage.getItem('certificate') || '');
   const [display, setDisplay] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
@@ -43,14 +44,18 @@ const CertificateInput = ({ content, setContent }: ICertificateInputProps) => {
 
   const decryptContent = useCallback(() => {
     decryptor.setPrivateKey(certificate);
-    const uncrypted = decryptor.decrypt(content);
-    if (uncrypted) {
-      setContent(uncrypted);
-      setDisplay(false);
-      localStorage.setItem('certificate', certificate);
-    } else {
-      setError(true);
-    }
+    setContent('');
+
+    encrypted.forEach((messageEnc) => {
+      const uncrypted = decryptor.decrypt(messageEnc);
+      if (uncrypted) {
+        setContent((prevContent) => prevContent.concat(uncrypted));
+        setDisplay(false);
+        localStorage.setItem('certificate', certificate);
+      } else {
+        setError(true);
+      }
+    });
   }, [certificate]);
 
   useEffect(() => {
